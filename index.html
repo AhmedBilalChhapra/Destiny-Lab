@@ -66,16 +66,16 @@
         /* ADVANCED PREMIUM CARD CSS STARTS HERE */
         #capture-area {
             background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary) 100%);
-            border-radius: 20px;
-            padding: 10px; /* Outer spacing */
+            padding: 20px; /* Adjusted padding to frame the dashed border perfectly */
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             border: 2px solid var(--accent);
+            /* border-radius removed to completely eliminate white corner bleed on export */
         }
 
         .ticket-inner {
-            border: 1px dashed rgba(212, 175, 55, 0.6); /* Gold dashed border */
-            border-radius: 15px;
+            border: 1px dashed rgba(212, 175, 55, 0.6); 
             padding: 25px;
+            /* Sharp corners match the boarding pass/ticket aesthetic */
         }
 
         .card-subtitle {
@@ -98,7 +98,7 @@
         .card-desc {
             font-size: 18px;
             line-height: 1.6;
-            color: #f0f0f0; /* Softer white for readability */
+            color: #f0f0f0; 
             margin-bottom: 20px;
         }
 
@@ -115,10 +115,9 @@
             width: 100%; 
             height: 350px; 
             object-fit: cover; 
-            border-radius: 12px; 
             margin: 0 0 15px 0; 
             box-shadow: 0 10px 20px rgba(0,0,0,0.4); 
-            border: 3px solid var(--accent); /* Gold border around image */
+            border: 3px solid var(--accent); 
             transition: height 0.3s ease; 
         }
         /* ADVANCED PREMIUM CARD CSS ENDS HERE */
