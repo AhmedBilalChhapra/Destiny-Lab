@@ -70,7 +70,8 @@
         .share-btn:hover { transform: translateY(-2px); }
         .btn-x { background: #000; }
         .btn-fb { background: #1877F2; }
-        .btn-wa { background: #25D366; } /* NEW WhatsApp Brand Green */
+        /* WHATSAPP ADDED HERE */
+        .btn-wa { background: #25D366; } 
         .btn-download { background: var(--accent); color: var(--primary); display: block; margin: 15px auto 0; width: fit-content; }
 
         .lead-qualify-box {
@@ -181,6 +182,7 @@
 
         <div class="share-container">
             <p style="font-size: 14px; color: #888; margin-bottom: 10px;">Share your destiny:</p>
+            <!-- WHATSAPP BUTTON REPLACED INSTAGRAM HERE -->
             <button class="share-btn btn-wa" onclick="shareWA()">WhatsApp</button>
             <button class="share-btn btn-x" onclick="shareX()">X (Twitter)</button>
             <button class="share-btn btn-fb" onclick="shareFB()">Facebook</button>
@@ -411,6 +413,7 @@
         });
     }
 
+    /* WHATSAPP LOGIC REPLACED INSTAGRAM HERE */
     function shareWA() {
         const text = `I just found my perfect study abroad destiny: ${finalResultName}! Find yours with the Edpro Destiny Hat at https://edproconsultants.com`;
         const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
