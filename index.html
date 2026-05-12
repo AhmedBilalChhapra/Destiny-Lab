@@ -74,10 +74,25 @@
         .btn-download { background: var(--accent); color: var(--primary); display: block; margin: 15px auto 0; width: fit-content; }
 
         .lead-qualify-box {
-            background: #f0f4f8;
-            padding: 20px;
-            border-radius: 12px;
+            background: #fffcf0;
+            padding: 25px 20px;
+            border-radius: 15px;
             margin-top: 25px;
+            border: 3px solid var(--accent);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.1);
+        }
+
+        /* NEW CTA PULSE ANIMATION */
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        .btn-pulse {
+            animation: pulseGlow 2s infinite;
+            background: var(--accent) !important;
+            color: var(--primary) !important;
+            font-size: 15px;
             border: 2px solid var(--primary);
         }
 
@@ -147,11 +162,14 @@
         </div>
 
         <div id="more-info-section" class="lead-qualify-box">
-            <p style="font-weight: bold; color: var(--primary); margin-bottom: 15px; font-size: 16px;">
-                Are you interested in studying in <span id="info-country-name" style="color: var(--accent);">...</span>?
+            <p style="color: #e63946; font-weight: 900; letter-spacing: 2px; font-size: 13px; margin: 0 0 5px 0; text-transform: uppercase;">⚠️ Final Step</p>
+            <p style="font-weight: bold; color: var(--primary); margin-bottom: 20px; font-size: 17px;">
+                Are you ready to map out your journey to <span id="info-country-name" style="color: var(--accent);">...</span>?
             </p>
-            <button class="share-btn" style="background: var(--primary); width: 45%; margin: 5px;" onclick="logInterest('Yes')">Yes</button>
-            <button class="share-btn" style="background: #ccc; color: #333; width: 45%; margin: 5px;" onclick="logInterest('No')">No</button>
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
+                <button class="share-btn btn-pulse" style="width: 100%; max-width: 280px; padding: 15px;" onclick="logInterest('Yes')">Yes, Send Details! 🎓</button>
+                <button class="share-btn" style="background: #e0e0e0; color: #555; width: 100%; max-width: 280px;" onclick="logInterest('No')">No, I'm just exploring</button>
+            </div>
         </div>
 
         <div class="share-container">
@@ -173,10 +191,10 @@
 
     const countryImages = {
         UK: "images/uk.jpg",
-        USA: "images/us.jpg", // Corrected to match your filename
+        USA: "images/us.jpg", 
         AUS: "images/aus.jpg",
         CAN: "images/canada.jpg",
-        GER: "images/germany.jpg", // Corrected to match your filename
+        GER: "images/germany.jpg", 
         UAE: "images/dubai.jpg",
         MAL: "images/malaysia.jpg",
         NZ: "images/nz.jpg"
@@ -352,9 +370,9 @@
     function logInterest(answer) {
         const infoSection = document.getElementById('more-info-section');
         if (answer === 'Yes') {
-            infoSection.innerHTML = "<p style='color: #00732f; font-weight: bold; margin: 0;'>✅ Excellent! An Edpro counselor will be in touch.</p>";
+            infoSection.innerHTML = "<p style='color: #00732f; font-weight: bold; margin: 0; font-size: 18px;'>✅ Excellent! Your destiny is mapped. An Edpro counselor will be in touch shortly.</p>";
         } else {
-            infoSection.innerHTML = "<p style='color: #555; font-weight: bold; margin: 0;'>No problem, feel free to explore your result!</p>";
+            infoSection.innerHTML = "<p style='color: #555; font-weight: bold; margin: 0; font-size: 16px;'>No problem, feel free to explore your result below!</p>";
         }
         
         const formData = {
